@@ -21,7 +21,9 @@ interface IFormInput {
   comment: string;
 }
 
-function getDate(d) {
+
+
+function getDate(d:string ) {
   let day, month, year;
 
   let result = d.match("[0-9]{2}([\-/ \.])[0-9]{2}[\-/ \.][0-9]{4}");
@@ -39,7 +41,7 @@ function getDate(d) {
     year = dateSplitted[0];
   }
 
-  if (month > 12) {
+  if (Number(month) > 12) {
     let aux = day;
     day = month;
     month = aux;
@@ -56,7 +58,7 @@ function Post({ post }: Props) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<IFormInput>();
   let date = getDate(post._createdAt);
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -87,7 +89,7 @@ function Post({ post }: Props) {
     <meta charSet='UTF-8' />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="coder hunts" />
+        <meta name="description" content="coder hunts, coding, codewithharry, python, websites, blogging, seo, nextjs, reactjs, typescript, nodejs, codechef, leetcode" />
         <title>Post - {post.slug.current}</title>
         <link className="rounded-md" rel="icon" href="/logo.jpeg" />
     </Head>
@@ -111,14 +113,17 @@ function Post({ post }: Props) {
             <h1 className="text-3xl mt-10 mb-3 font-bold">{post.title}</h1>
 
             <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
-
+            
             <div className="flex items-center space-x-2">
-
+              
               <img className="rounded-full  shadow-md w-10 object-contain h-10" src={urlFor(post.author.image).url()!} alt="" />
-              {getDate}
+              
               <p className="font-extralight text-sm">Blog post by <span className="text-green-600">{post.author.name}</span>  - Published at {" "} {date}</p>
+              
+              </div>
+              
 
-            </div>
+           
 
             <div className="mt-10">
               <PortableText

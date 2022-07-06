@@ -43,7 +43,7 @@ export default function Home({ posts }: Props) {
             <div className='md:text-xl lg:text-3xl font-semibold md:w-1/3 mb-2 flex justify-center items-center md:mb-8 md:mt-4  '>Competetive Programmer</div>
           </div>
         </div>
-        <CookieConsent location='bottom' buttonText="Accept All" cookieName="Third Party Cookies" style={{ background: 'lightgreen', marginLeft: "12px", marginBottom: "10px", padding: "10px", border: "2px solid black" }} buttonStyle={{ background: "green", color: "white", fontSize: "13px" }} expires={150}><div className='text-black rounded-md'> This Website uses Third Party Cookies to make good user's Experience and to control to the traffic coming this website.</div></CookieConsent>
+        <CookieConsent location='bottom' buttonText="Accept All" cookieName="Third Party Cookies" style={{ background: 'lightgreen', marginRight: "12px", marginLeft: "12px", marginBottom: "10px", padding: "10px", border: "2px solid black" }} buttonStyle={{ background: "green", color: "white", fontSize: "13px" }} expires={150}><div className='text-black rounded-md'> This Website uses Third Party Cookies to make good user's Experience and to control to the traffic coming to this website.</div></CookieConsent>
       
       <div className="flex min-h-screen flex-col my-4 md:my-6  lg:my-8 md:px-2  max-w-7xl mx-auto">
 

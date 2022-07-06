@@ -47,7 +47,7 @@ function Navbar() {
                     error: "Error while Redirecting"
 
                 })
-                }}>Contact</h3></Link>) : (<Link href="/account"><img className="shadow-md rounded-lg object-contain h-8 cursor-pointer" src={user.picture} alt="" /></Link>)}
+                }}>Contact</h3></Link>) : (<Link href="/account"><img className="shadow-md rounded-lg object-contain h-8 cursor-pointer" src={user.picture || '/p1.png'} alt="" /></Link>)}
             </div>
             
         </header>

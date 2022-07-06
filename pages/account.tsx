@@ -20,12 +20,12 @@ function Contact () {
             </Head>
             <Navbar />
             <div className='shadow-lg shadow-green-700 rounded-lg'>
-            <img className='w-32 h-32 object-cover mx-auto py-2 my-10 border-4 border-green-600 rounded-full bg-black mb-8 ' src={user?.picture} alt="" />
+            <img className='w-32 h-32 object-cover mx-auto py-2 my-10 border-4 border-green-600 rounded-full bg-black mb-8 ' src={user?.picture || '/p1.png'} alt="" />
 
             <div className='flex flex-col text-xl justify-center items-center my-4 '>
                 <p className='mb-4 text-2xl '>Name : <span className='text-green-600 font-bold' >{user?.nickname} {user?.email_verified===true ? (<span>✅</span>): <span>❌</span>}</span></p>
                 <p className='mb-4 text-2xl '>Email : <span className='text-green-600 font-bold' >{user?.email}</span></p>
-                <p className='mb-4 text-2xl '>Last Login : <span className='text-green-600 font-bold' >{new Date(user?.updated_at).toLocaleString()}</span></p>
+                <p className='mb-4 text-2xl '>Last Login : <span className='text-green-600 font-bold' >{new Date(user?.updated_at || "Login Required").toLocaleString()}</span></p>
                 <button className='my-12 border-4 h-12 w-24 rounded-md bg-green-800 text-white hover:bg-red-600 ' onClick={() => {
                     toast.promise(Router.push('/api/auth/logout'),{
                         pending: "Logging Out",

@@ -10,7 +10,7 @@ function Contact () {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="coder hunts, coding, codewithharry, python, websites, blogging, seo, nextjs, reactjs, typescript, nodejs, codechef, leetcode" />
-                <title>Contact - Coder Hunt</title>
+                <title>Contact Us - Coder Hunt</title>
                 <link className="rounded-md" rel="icon" href="/logo.jpeg" />
             </Head>
             <Navbar />

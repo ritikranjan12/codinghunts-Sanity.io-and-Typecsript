@@ -8,7 +8,7 @@ import { useUser } from '@auth0/nextjs-auth0';
 function Contact () {
     const {user,error,isLoading} = useUser();
 
-    if(!user) toast.warning("Please Login First....")
+    if(!user) toast.error("Please Login First ...")
         return(
             <div className="flex min-h-screen flex-col md:px-2  max-w-7xl mx-auto">
             <Head>

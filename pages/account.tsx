@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
-import { useUser } from '@auth0/nextjs-auth0';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Router from 'next/router';
+import { useUser } from '@auth0/nextjs-auth0';
 
 function Contact () {
-    const {user, error, isLoading} = useUser();
+    const {user,error,isLoading} = useUser();
 
+    if(!user) toast.warning("Please Login First....")
         return(
             <div className="flex min-h-screen flex-col md:px-2  max-w-7xl mx-auto">
             <Head>
@@ -15,7 +16,7 @@ function Contact () {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="coder hunts, coding, codewithharry, python, websites, blogging, seo, nextjs, reactjs, typescript, nodejs, codechef, leetcode" />
-                <title>Contact - Coder Hunt</title>
+                <title>Profile - {user?.name}</title>
                 <link className="rounded-md" rel="icon" href="/logo.jpeg" />
             </Head>
             <Navbar />

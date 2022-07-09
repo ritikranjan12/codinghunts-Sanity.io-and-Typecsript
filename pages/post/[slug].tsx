@@ -144,7 +144,7 @@ function Post({ post }: Props) {
                     <a href={href} className="text-blue-500 hover:underline">{children}</a>
                   ),
                   h4: ({ children }: any) => (
-                    <pre  className='text-black text-md space-y-3  whitespace-pre-wrap overflow-x-scroll  mx-auto'><code className='px-2'>{children}</code></pre>
+                    <pre  className='text-black text-md space-y-3 border-2 border-black my-2 whitespace-pre-wrap overflow-x-scroll  mx-auto'><code className='px-2'>{children}</code></pre>
                   ),
                   
                 }}

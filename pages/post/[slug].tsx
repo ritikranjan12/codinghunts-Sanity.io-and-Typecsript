@@ -2,13 +2,14 @@ import { client, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import Navbar from "../../components/Navbar";
 import { GetStaticProps } from 'next';
-import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import Head from 'next/head';
+import Script from 'next/script'
 import { useUser } from '@auth0/nextjs-auth0';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BlockContent from '@sanity/block-content-to-react'
 
 interface Props {
   post: Post;
@@ -81,7 +82,6 @@ function Post({ post }: Props) {
 
   };
   
-  
   return (
 
     <>
@@ -92,6 +92,8 @@ function Post({ post }: Props) {
         <meta name="description" content="coder hunts, coding, codewithharry, python, websites, blogging, seo, nextjs, reactjs, typescript, nodejs, codechef, leetcode" />
         <title>Post - {post.slug.current}</title>
         <link className="rounded-md" rel="icon" href="/logo.jpeg" />
+        <link href="../../styles/prism.css" rel="stylesheet" />
+        <Script src="prism.js"></Script>
     </Head>
       <Navbar />
       
@@ -126,11 +128,12 @@ function Post({ post }: Props) {
            
 
             <div className="mt-10">
-              <PortableText
+              {/* <PortableText
                 content={post.body}
                 dataset="production"
                 projectId="3vxz0pud"
-                serializers={{
+                serializers={
+                 {
                   h1: (props: any) => (
                     <h1 className="text-2xl font-bold my-5" {...props} />
                   ),
@@ -142,13 +145,25 @@ function Post({ post }: Props) {
                   ),
                   link: ({ href, children }: any) => (
                     <a href={href} className="text-blue-500 hover:underline">{children}</a>
-                  ),
-                  h4: ({ children }: any) => (
-                    <pre  className='text-black bg-yellow text-md space-y-3 border-2 border-black my-2 whitespace-pre-wrap overflow-x-scroll  mx-auto'><code className='px-2'>{children}</code></pre>
-                  ),
-                  
+                  ), 
+                  code: ({node = {}}) => {
+                    const { code, language } = node
+                    if (!code) {
+                      return null
+                    }
+                    return <SyntaxHighlighterProps 
+                            language={language || "text"}  
+                            lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+                            wrapLines={true}>
+                              {code}
+                            </SyntaxHighlighterProps>
+                  },                 
                 }}
-              />
+              /> */}
+              <BlockContent
+              dataset="production"
+              projectId="3vxz0pud"
+               blocks={post.body} serializers={serializers} />
             </div>
 
           </article>
@@ -233,6 +248,28 @@ function Post({ post }: Props) {
 }
 
 export default Post;
+
+const serializers =  {
+  types: {
+    h1: (props: any) => (
+      <h1 className="text-4xl font-bold my-5" {...props} />
+    ),
+    h2: (props: any) => (
+      <h2 className="text-2xl font-bold my-5" {...props} />
+    ),
+    li: ({ children }: any) => (
+      <li className="ml-4 list-desc"> {children} </li>
+    ),
+    link: ({ href, children }: any) => (
+      <a href={href} className="text-blue-500 hover:underline">{children}</a>
+    ), 
+    code: (props:any) => (
+      <pre className="whitespace-pre-wrap overflow-x-scroll  mx-auto border-2 border-black px-2 py-2 my-4 space-y-1 shadow-md">
+        <code className={"language"+props.node.language}>{props.node.code}</code>
+      </pre>
+    ),    
+  },
+}
 
 export const getStaticPaths = async () => {
   

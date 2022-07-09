@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import {UserProvider} from '@auth0/nextjs-auth0';
 import { ToastContainer } from 'react-toastify';
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   
   return (

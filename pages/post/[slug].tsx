@@ -135,7 +135,7 @@ function Post({ post }: Props) {
                     <h1 className="text-2xl font-bold my-5" {...props} />
                   ),
                   h2: (props: any) => (
-                    <h1 className="text-xl font-bold my-5" {...props} />
+                    <h2 className="text-xl font-bold my-5" {...props} />
                   ),
                   li: ({ children }: any) => (
                     <li className="ml-4 list-desc"> {children} </li>
@@ -143,6 +143,10 @@ function Post({ post }: Props) {
                   link: ({ href, children }: any) => (
                     <a href={href} className="text-blue-500 hover:underline">{children}</a>
                   ),
+                  h5: ({ children }: any) => (
+                    <pre  className='text-black text-md space-y-3  whitespace-pre-wrap overflow-x-scroll  mx-auto'><code className='px-2'>{children}</code></pre>
+                  ),
+                  
                 }}
               />
             </div>

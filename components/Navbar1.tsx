@@ -21,7 +21,7 @@ function Navbar1() {
             </div>
             </div>
             
-            <div className='flex items-center space-x-2  md:space-x-4 text-green-600'>
+            <div className='flex space-x-2  md:space-x-4 text-green-600'>
                 {!user ? (<h3 className="cursor-pointer hover:text-green-800 hover:underline" onClick={() => {
                     toast.promise(Router.push('/api/auth/login'),{
                         pending: "Loading...",

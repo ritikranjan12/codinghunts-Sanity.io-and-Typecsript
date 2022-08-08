@@ -100,7 +100,7 @@ function Post({ post }: Props) {
       
 
               
-      <img className="w-full rounded-lg shadow-md h-60 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
+      <img className="w-3/4 rounded-lg shadow-md h-60 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
 
       <div className="lg:flex">
 

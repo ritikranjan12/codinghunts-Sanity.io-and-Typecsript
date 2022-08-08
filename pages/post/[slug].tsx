@@ -1,6 +1,6 @@
 import { client, urlFor } from "../../sanity";
 import { Post } from "../../typings";
-import Navbar from "../../components/Navbar";
+import Navbar1 from "../../components/Navbar";
 import { GetStaticProps } from 'next';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState , useEffect} from 'react';
@@ -95,12 +95,12 @@ function Post({ post }: Props) {
         <link href="../../styles/prism.css" rel="stylesheet" />
         <Script src="prism.js"></Script>
     </Head>
-    <Navbar />
+    <Navbar1 />
       
       
 
               
-      <img className="w-3/4 rounded-lg shadow-md h-60 object-cover mx-4" src={urlFor(post.mainImage).url()!} alt="" />
+      <img className="w-3/4 rounded-lg shadow-md h-60 object-cover mx-32" src={urlFor(post.mainImage).url()!} alt="" />
 
       <div className="lg:flex">
 

@@ -208,7 +208,7 @@ function Post({ post }: Props) {
                   <span className="text-red-500">- The Name Field is Required</span>
                 )}
                 {errors.email && (
-                  <span className="text-red-500">- The Comment Field is Required</span>
+                  <span className="text-red-500">- The Email Field is Required</span>
                 )}
                 {errors.comment && (
                   <span className="text-red-500">- The Comment Field is Required</span>

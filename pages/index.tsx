@@ -61,12 +61,13 @@ export default function Home({ posts }: Props) {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:p-6'>
           {posts.map(post => (
             <div key={post._id} onClick={() => {
-              toast.promise(Router.push(`/post/${post.slug.current}`), {
-                pending: "Loading...",
-                success: "Opening the page",
-                error: "Error while Redirecting"
+              Router.push(`/post/${post.slug.current}`)
+              // toast.promise(Router.push(`/post/${post.slug.current}`), {
+              //   pending: "Loading...",
+              //   success: "Opening the page",
+              //   error: "Error while Redirecting"
 
-              })
+              // })
             }} className='border rounded-lg cursor-pointer group overflow-hidden'>
               <img className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()!} alt="" />
               <div className='flex justify-between p-5 bg-white' >

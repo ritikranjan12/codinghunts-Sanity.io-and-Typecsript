@@ -69,14 +69,14 @@ function Post({ post }: Props) {
         method: 'POST',
         body: JSON.stringify(data),
       }).then(() => {
-        toast.success("Comment Added")
+        // toast.success("Comment Added")
         setSubmitted(true);
       }).catch(err => {
-        toast.error("Failed to Add Comment")
+        // toast.error("Failed to Add Comment")
         setSubmitted(false);
       })
     } else {
-      toast.warning("Please Log In to Add Comment");
+      // toast.warning("Please Log In to Add Comment");
     }
     
 

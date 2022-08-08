@@ -28,12 +28,13 @@ function Contact () {
                 <p className='mb-4 text-2xl '>Email : <span className='text-green-600 font-bold' >{user?.email}</span></p>
                 <p className='mb-4 text-2xl '>Last Login : <span className='text-green-600 font-bold' >{new Date(user?.updated_at || "Login Required").toLocaleString()}</span></p>
                 <button className='my-12 border-4 h-12 w-24 rounded-md bg-green-800 text-white hover:bg-red-600 ' onClick={() => {
-                    toast.promise(Router.push('/api/auth/logout'),{
-                        pending: "Logging Out",
-                        success : "Logged Out",
-                        error: "Error while Logging Out"
+                    Router.push('/api/auth/logout')
+                    // toast.promise(Router.push('/api/auth/logout'),{
+                    //     pending: "Logging Out",
+                    //     success : "Logged Out",
+                    //     error: "Error while Logging Out"
     
-                    })
+                    // })
                 }}>Log Out</button>
             </div>
 

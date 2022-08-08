@@ -85,7 +85,6 @@ function Post({ post }: Props) {
   return (
 
     <>
-    <Navbar />
     <Head>
     <meta charSet='UTF-8' />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -96,6 +95,7 @@ function Post({ post }: Props) {
         <link href="../../styles/prism.css" rel="stylesheet" />
         <Script src="prism.js"></Script>
     </Head>
+    <Navbar />
       
       
 

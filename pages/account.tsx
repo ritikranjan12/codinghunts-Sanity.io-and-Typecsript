@@ -6,7 +6,7 @@ import Router from 'next/router';
 import { useUser } from '@auth0/nextjs-auth0';
 
 function Contact () {
-    const {user,error,isLoading} = useUser();
+    const {user,error,isLoading,p} = useUser();
 
     if(!user) toast.error("Please Login First ...")
         return(
@@ -27,6 +27,7 @@ function Contact () {
                 <p className='mb-4 text-2xl '>Name : <span className='text-green-600 font-bold' >{user?.nickname} {user?.email_verified===true ? (<span>✅</span>): <span>❌</span>}</span></p>
                 <p className='mb-4 text-2xl '>Email : <span className='text-green-600 font-bold' >{user?.email}</span></p>
                 <p className='mb-4 text-2xl '>Last Login : <span className='text-green-600 font-bold' >{new Date(user?.updated_at || "Login Required").toLocaleString()}</span></p>
+                <p className='mb-4 text-2xl '>Last Login : <span className='text-green-600 font-bold' >{user?.name}</span></p>
                 <button className='my-12 border-4 h-12 w-24 rounded-md bg-green-800 text-white hover:bg-red-600 ' onClick={() => {
                     Router.push('/api/auth/logout')
                     // toast.promise(Router.push('/api/auth/logout'),{

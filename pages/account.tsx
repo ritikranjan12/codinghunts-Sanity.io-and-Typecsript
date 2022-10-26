@@ -6,7 +6,7 @@ import Router from 'next/router';
 import { useUser } from '@auth0/nextjs-auth0';
 
 function Contact () {
-    const {user,error,isLoading,p} = useUser();
+    const {user,error,isLoading} = useUser();
 
     if(!user) toast.error("Please Login First ...")
         return(

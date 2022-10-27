@@ -35,7 +35,7 @@ export default function Home({ posts }: Props) {
             <img className='w-32 h-32 object-cover mx-auto py-2 my-10 border-4 border-green-600 rounded-full bg-black' src="/logo.jpeg" alt="" />
           </div>
           <div className='flex justify-center items-center'>
-            <h2 className='text-2xl font-bold underline  md:text-3xl lg:text-4xl my-3 text-white '>Hi👋, I am  <span className='text-blue-400'>Ritik Ranjan!<Link href='https://portfolio.coderhunts.com/'>(Resume)</Link> </span> </h2>
+            <h2 className='text-2xl font-bold underline  md:text-3xl lg:text-4xl my-3 text-white '>Hi👋, I am Ritik Ranjan! <span className='text-blue-400'>Ritik Ranjan!<Link href='https://portfolio.coderhunts.com/'>(Resume)</Link> </span> </h2>
           </div>
 
           <div className='flex flex-col md:flex-row  justify-center items-center'>

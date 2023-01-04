@@ -26,24 +26,10 @@ export default function Home({ posts }: Props) {
           <meta http-equiv="X-UA-Compatible" content="ie=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="description" content="coder hunts, coding, codewithharry, python, websites, blogging, seo, nextjs, reactjs, typescript, nodejs, codechef, leetcode" />
-          <title>Home - Ritik Ranjan </title>
+          <title>Home - Coding Hunts</title>
           <link className="rounded-md" rel="icon" href="/logo.jpeg" />
         </Head>
-        <Navbar />
-        <div className='justify-center items-center shadow-lg shadow-red-800' style={{ backgroundColor: `${bcolor}` }}>
-          <div>
-            <img className='w-32 h-32 object-cover mx-auto py-2 my-10 border-4 border-green-600 rounded-full bg-black' src="/logo.jpeg" alt="" />
-          </div>
-          <div className='flex justify-center items-center'>
-            <h2 className='text-2xl font-bold underline  md:text-3xl lg:text-4xl my-3 text-white '>Hi👋, I am <span className='text-blue-400'><Link href='https://portfolio.coderhunts.com/'>Ritik Ranjan!</Link> </span> </h2>
-          </div>
-
-          <div className='flex flex-col md:flex-row  justify-center items-center'>
-            <div className=' md:text-xl lg:text-3xl font-semibold md:w-1/3 mb-2 flex justify-center items-center  md:mb-8 md:mt-4  '>Web Developer</div>
-            <div className='md:text-xl lg:text-3xl font-semibold md:w-1/3 mb-2 flex justify-center items-center md:mb-8 md:mt-4  '>Machine Learning</div>
-            <div className='md:text-xl lg:text-3xl font-semibold md:w-1/3 mb-2 flex justify-center items-center md:mb-8 md:mt-4  '>Competetive Programmer</div>
-          </div>
-        </div>      
+        <Navbar />     
         <Popup />
       <div className="flex min-h-screen flex-col my-4 md:my-6  lg:my-8 md:px-2  max-w-7xl mx-auto">
 
